@@ -1,0 +1,591 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    color: white;
+    font-family: Montserrat;
+    text-align: center;
+    background-image: linear-gradient(to right bottom, #161616, #171422, #1a102c, #1f0a36, #26003d);
+    
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    overflow: visible;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #914CA2;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 79px -25px rgba(255,255,255,1);
+    transition: 0.5s;
+    margin-left: 20px;
+}
+
+@media (max-width: 511px) {
+    .btn {
+        font-size: 0.7rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (min-width: 511px) {
+    .btn:hover {
+        display: inline-block;
+        background-color: #b662cb;
+        color: #fff832;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 20px 40px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 79px -20px rgba(255,255,255,1);
+        transition: 0.5s;
+    }
+}
+
+
+
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+h1 {
+    font-size: 60px;
+    text-shadow: 2px 0px 3px rgba(129, 129, 129, 0.298);
+    margin: 25px 0;
+}
+
+@media (max-width: 450px) {
+    h1 { 
+        font-size: 50px;
+    }
+}
+
+h2 {
+    font-size: 50px;
+    text-shadow: 2px 0px 3px rgba(129, 129, 129, 0.298);
+    margin: 40px 0;
+    border-bottom: #bb9200b8 solid 2px;
+}
+
+@media (max-width: 586px) {
+    h2 { 
+        font-size: 40px;
+    }
+}
+
+h3 {
+    padding-bottom: 5px;
+    border-bottom: #bb9200c6 solid 2px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    transition: all 0.5s;
+}
+
+.header-scrolled {
+    background-color: #161616bf;
+    transition: all 0.5s;
+}
+
+nav.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+}
+
+nav img {
+    height: 40px;
+    display: block;
+}
+
+.hero img {
+    width: 125px;
+    display: block;
+}
+
+.hero-subtext {
+    display: inline-block;
+    font-size: 1.2rem;
+    background: -webkit-linear-gradient(#bb9300, #fed950);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    margin-top: 15px;
+    
+
+}
+
+#deep-pockets-logo + span {
+    display: inline-block;
+    line-height: 1.2rem;
+    max-width: 600px;
+    border-top: #bb920083 solid 2px;
+    padding: 20px 15px 0 15px;
+
+}
+
+h1 span {
+    color: #70ff38;
+    display: inline-block;
+    font-size: 60px !important;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: linear-gradient(to right bottom, #70ff38, #226508);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0); 
+    letter-spacing: 1rem;
+    text-shadow: rgba(255, 255, 255, 0.9) 0px 0px 39px;
+}
+
+@media (max-width: 586px) {
+    h1 span { 
+        font-size: 40px !important;
+    }
+}
+
+
+
+.hero-heading-text-wrapper {
+    margin-bottom: 50px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-inner-text-wrapper {
+    margin-bottom: 20px;
+}
+
+#deep-pockets-logo {
+    width: 700px;
+    display: block;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 586px) {
+    #deep-pockets-logo { 
+        width: 500px;
+    }
+}
+
+.hero-cards-wrapper-background {
+    position: absolute;
+    width: 100%;
+    height: 100000px;
+    border-radius: 15px;
+    background-image: url('/images/TSA\ Icon.png');
+    background-size: 50px;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+    
+}
+
+.hero-cards-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 175px 50px 50px 50px;
+    border: #43434383 solid 2px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px -1px 89px -54px rgba(255, 196, 19, 0.253);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 100px;
+
+}
+
+.hero-cards-wrapper::before {
+    content: "What Customers Get";
+    box-shadow: 0px 0px 49px -3px rgba(0, 0, 0, 0.533);
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 2px 0px 6px rgba(74, 74, 74, 0.298);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #795f00cb;
+}
+
+
+@media (max-width: 475px) {
+    .hero-cards-wrapper::before {
+        font-size: 25px;
+    
+    }
+}
+
+@media (max-width: 1080px) {
+    .hero-cards-wrapper { 
+        grid-template-columns: 1fr 1fr;
+        padding: 175px 20px 20px 20px;
+    }
+}
+
+@media (max-width: 715px) {
+    .hero-cards-wrapper { 
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: #bb92007e solid 2px;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 0px 49px -3px rgba(0, 0, 0, 0.533);
+    z-index: 1;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+
+
+@media (max-width: 515px) {
+    .hero-card p { 
+        font-size: 0.7rem;
+    }
+}
+
+
+.hero-card-1:hover, .hero-card-2:hover, .hero-card-3:hover, .hero-card-4:hover, .hero-card-5:hover, .hero-card-6:hover {
+    z-index: 3;
+    transform: scale(1.1);
+    transition: 0.5s;
+    box-shadow: 0px -1px 89px -5px rgba(255, 196, 19, 0.253);
+    /* From https://css.glass */
+    background: rgba(169, 169, 169, 0.085);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);  
+}    
+
+@media (max-width: 715px) {
+    .hero-card:hover { 
+        transform: scale(1) !important;
+    }
+}
+
+.hero-card img {
+    width: 100%; 
+}
+
+.card-img-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 50px -10px rgba(255, 255, 255, 0.535);
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+
+}
+
+
+main .container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 70px;
+    margin-bottom: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+@media (max-width: 586px) {
+    main .container { 
+        gap: 15px;
+        
+    }
+}
+
+main {
+    overflow: visible;
+    width: 100vw;
+    background-image: url('/images/What\ Customers\ Get\ Background4.png');
+    object-fit: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}
+
+.what-clients-get-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-image: url('/images/dottet\ line\ background4.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: visible;
+}
+
+
+
+@media (max-width: 586px) {
+    .what-clients-get-card-wrapper { 
+        transform: scale(0.8);
+        justify-content: start;
+        position: relative;
+        top: -100px;
+    }
+}
+
+@media (max-width: 468px) {
+    .what-clients-get-card-wrapper { 
+        transform: scale(0.7);
+        justify-content: start;
+        top: -150px;
+    }
+}
+
+@media (max-width: 406px) {
+    .what-clients-get-card-wrapper { 
+        transform: scale(0.6);
+        justify-content: start;
+        top: -210px;
+    }
+}
+
+@media (max-width: 353px) {
+    .what-clients-get-card-wrapper { 
+        transform: scale(0.5);
+        justify-content: start;
+        top: -250px;
+    }
+}
+
+.what-clients-get-card-wrapper-left {
+    width: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    position: relative;
+    left: 117px;
+    
+    
+}
+
+.what-clients-get-card-wrapper-right img {
+    margin-left: 15px;
+}
+
+.what-clients-get-card-wrapper-right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: right;
+    position: relative;
+    right: 118px;
+    
+    
+}
+
+.what-clients-get-card-wrapper-left span {
+    display: block;
+    padding: 20px;
+    border: #bb920025 solid 2px;
+    border-radius: 15px;
+    background-color: #1f1f1f;
+    transform: rotate(-5deg);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.what-clients-get-card-wrapper-left p {
+    padding-left: 60px;
+    max-width: 300px;
+}
+
+
+.what-clients-get-card-wrapper-right span {
+    display: block;
+    padding: 20px;
+    border: #bb920025 solid 2px;
+    border-radius: 15px;
+    background-color: #1f1f1f;
+    transform: rotate(5deg);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.what-clients-get-card-wrapper-right p {
+    padding-right: 60px;
+    max-width: 300px;
+}
+
+.divider {
+    width: 100%;
+    height: 40px;
+    border-top: #bb9200aa solid 8px;
+    border-bottom: #bb9200aa solid 8px;
+    background-color: #924a9f5d;
+    margin-bottom: 75px;
+
+}
+
+.faq {
+    overflow: visible;
+    width: 100vw;
+    background-image: url('/images/FAQ\ Background.png');
+    object-fit: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.faq-section {
+    max-width: 900px;
+    min-height: 600px;
+    margin: 0 auto 100px auto;
+    padding: 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.faq-section h2 {
+    text-align: center;
+    display: inline-block;
+    margin: 80px auto;
+    align-self: center;
+}
+
+.faq-section span {
+    font-size: 1.2rem;
+    font-weight: 600;
+} 
+
+.faq-questions-answers-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#faq-answer-1, #faq-answer-2, #faq-answer-3, #faq-answer-4, #faq-answer-5 {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#faq-answer-1.faq-answer-1-active, #faq-answer-2.faq-answer-2-active, #faq-answer-3.faq-answer-3-active, #faq-answer-4.faq-answer-4-active, #faq-answer-5.faq-answer-5-active {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    max-height: 200px;
+    transition: max-height 0.5s ease;
+}
+
+.faq-question-1, .faq-question-2, .faq-question-3, .faq-question-1, .faq-question-4, .faq-question-5 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#faq-question-1-wrapper, #faq-question-2-wrapper, #faq-question-3-wrapper, #faq-question-4-wrapper, #faq-question-5-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: #bb9200c6 solid 2px;
+    border-radius: 15px;
+    padding: 20px 20px 10px 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+
+#faq-question-1-wrapper.faq-question-1-wrapper-active, #faq-question-2-wrapper.faq-question-2-wrapper-active, #faq-question-3-wrapper.faq-question-3-wrapper-active, #faq-question-4-wrapper.faq-question-4-wrapper-active, #faq-question-5-wrapper.faq-question-5-wrapper-active  {
+    border: #bb920076 solid 2px;
+    border-radius: 15px;
+    padding: 20px 20px;
+    transition: 0.5s ease;
+    background-color: #171422c2;
+}
+
+
+#caret-question-1, #caret-question-2, #caret-question-3, #caret-question-4, #caret-question-5 {
+    width: 18px;
+    margin-left: 10px;
+    height: 18px;
+    transform: rotate(-90deg);
+    transition: 0.5s ease;
+}
+
+#caret-question-1.caret-question-1-active, #caret-question-2.caret-question-2-active, #caret-question-3.caret-question-3-active, #caret-question-4.caret-question-4-active, #caret-question-5.caret-question-5-active {
+    width: 18px;
+    height: 18px;
+    transform: rotate(0);
+    transition: 0.5s ease;
+}
+
+
+
+footer {
+    background-color: #bb920082;
+    padding: 15px 0;
+    font-style: italic;
+}
